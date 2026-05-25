@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>下肢周邊神經走向與鬆動術整理</title>
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #5e6877;
+      --line: #d7dde6;
+      --paper: #fbfaf7;
+      --surface: #ffffff;
+      --route: #0f766e;
+      --stretch: #b45309;
+      --slide: #2563eb;
+      --soft-route: #e5f4f1;
+      --soft-stretch: #fff2dd;
+      --soft-slide: #eaf1ff;
+      --shadow: 0 14px 36px rgba(24, 33, 47, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(15, 118, 110, 0.08), transparent 360px),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      padding: 64px 0 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 42px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--route);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.25rem, 6vw, 5.2rem);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 710px;
+      margin: 22px 0 0;
+      color: #374151;
+      font-size: clamp(1.02rem, 2.2vw, 1.28rem);
+    }
+
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 6px 11px;
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #24403d;
+      font-size: 0.9rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .overview-panel {
+      border: 1px solid rgba(24, 33, 47, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .overview-panel h2 {
+      margin: 0 0 16px;
+      font-size: 1.1rem;
+    }
+
+    .route-map {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+      padding-left: 22px;
+    }
+
+    .route-map::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      bottom: 11px;
+      left: 6px;
+      width: 2px;
+      background: linear-gradient(var(--route), var(--slide));
+    }
+
+    .map-node {
+      position: relative;
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(24, 33, 47, 0.07);
+    }
+
+    .map-node:last-child {
+      border-bottom: 0;
+    }
+
+    .map-node::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: -21px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--route);
+    }
+
+    .map-node strong {
+      color: #0f4d48;
+      font-size: 0.94rem;
+    }
+
+    .map-node span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .notice {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--stretch);
+      background: var(--soft-stretch);
+      color: #5f3a0a;
+      font-size: 0.94rem;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 8px 0 34px;
+      border-top: 1px solid rgba(24, 33, 47, 0.08);
+      border-bottom: 1px solid rgba(24, 33, 47, 0.08);
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #344054;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: var(--surface);
+      outline: 2px solid rgba(15, 118, 110, 0.22);
+      outline-offset: 2px;
+    }
+
+    .section-title {
+      margin: 56px 0 18px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .nerve {
+      scroll-margin-top: 76px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(24, 33, 47, 0.1);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(24, 33, 47, 0.05);
+      overflow: hidden;
+    }
+
+    .nerve-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      padding: 26px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(15, 118, 110, 0.1), rgba(255, 255, 255, 0));
+    }
+
+    .nerve-title h3 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .latin {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .root-badge {
+      align-self: start;
+      min-width: 112px;
+      padding: 10px 12px;
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: 8px;
+      background: var(--soft-route);
+      color: #0f4d48;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .root-badge small {
+      display: block;
+      color: #47736f;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .nerve-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.52fr);
+      gap: 24px;
+      padding: 24px 26px 28px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .info-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .info-card.route {
+      background: var(--soft-route);
+      border-color: rgba(15, 118, 110, 0.2);
+    }
+
+    .info-card.stretch {
+      background: var(--soft-stretch);
+      border-color: rgba(180, 83, 9, 0.2);
+    }
+
+    .info-card.slide {
+      background: var(--soft-slide);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .info-card h4 {
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .dot {
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--route);
+    }
+
+    .stretch .dot {
+      background: var(--stretch);
+    }
+
+    .slide .dot {
+      background: var(--slide);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.12rem;
+    }
+
+    li + li {
+      margin-top: 7px;
+    }
+
+    .side {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .mini-route {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+
+    .mini-route h4,
+    .keynote h4 {
+      margin: 0 0 12px;
+      font-size: 0.96rem;
+    }
+
+    .landmarks {
+      display: grid;
+      gap: 9px;
+    }
+
+    .landmark {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: center;
+      color: #465163;
+      font-size: 0.91rem;
+    }
+
+    .num {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .keynote {
+      border-radius: 8px;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      background: #f7faff;
+      padding: 16px;
+      color: #344054;
+      font-size: 0.94rem;
+    }
+
+    .cue {
+      display: inline;
+      padding: 0.12em 0.4em;
+      border-radius: 5px;
+      background: rgba(24, 33, 47, 0.08);
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .table-section {
+      margin: 58px 0 70px;
+    }
+
+    .table-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+    }
+
+    caption {
+      padding: 18px 20px;
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 850;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: 14px 15px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f4f7f8;
+      color: #344054;
+      font-size: 0.86rem;
+      text-transform: none;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fcfdff;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 2px 4px 2px 0;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.1);
+      color: #0f4d48;
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .footer-note {
+      margin: 0 0 48px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero {
+        min-height: auto;
+        padding-top: 42px;
+      }
+
+      .hero-grid,
+      .nerve-body {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page,
+      .nav {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .nerve-header {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .nerve-body {
+        padding: 20px;
+      }
+
+      .map-node {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .nav-wrap {
+        position: static;
+      }
+
+      .nerve,
+      .table-shell,
+      .overview-panel {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero page">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Lower Limb Neurodynamics</p>
+        <h1>下肢周邊神經走向與鬆動術整理</h1>
+        <p class="lead">
+          依照課程資料整理六條常見下肢神經：股外側皮神經、股神經、閉孔神經、脛神經、腓腸神經、腓總神經。每一條都以「神經走向、牽張測試、滑動技術」同一格式呈現，方便複習與臨床操作前快速對照。
+        </p>
+        <div class="meta-strip" aria-label="頁面重點">
+          <span class="pill">6 條神經</span>
+          <span class="pill">走向定位</span>
+          <span class="pill">牽張 / 張力測試</span>
+          <span class="pill">Sliding / Flossing</span>
+        </div>
+      </div>
+
+      <aside class="overview-panel" aria-label="快速閱讀方式">
+        <h2>閱讀方式</h2>
+        <div class="route-map">
+          <div class="map-node">
+            <strong>先看走向</strong>
+            <span>確認神經通過髖、膝、踝、足部哪一側。</span>
+          </div>
+          <div class="map-node">
+            <strong>再看拉伸</strong>
+            <span>用相反方向把神經床拉長，做為張力測試。</span>
+          </div>
+          <div class="map-node">
+            <strong>最後滑動</strong>
+            <span>遵守一端拉長、另一端放鬆，避免持續硬拉。</span>
+          </div>
+        </div>
+        <div class="notice">
+          本頁是課程筆記整理，用於學習與溝通。實際治療需依病人症狀、耐受度與臨床判斷調整力道。
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="nav-wrap" aria-label="神經分類導覽">
+    <div class="nav">
+      <a href="#lfcn">股外側皮神經</a>
+      <a href="#femoral">股神經</a>
+      <a href="#obturator">閉孔神經</a>
+      <a href="#tibial">脛神經</a>
+      <a href="#sural">腓腸神經</a>
+      <a href="#common-peroneal">腓總神經</a>
+      <a href="#summary">統整表</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="section-title">
+      <h2>分條整理</h2>
+      <p>每張卡片都把近端、遠端與關節擺位拆開，讓「要拉哪一段、要放哪一端」比較不容易混在一起。</p>
+    </div>
+
+    <article class="nerve" id="lfcn">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>股外側皮神經 <span class="latin">Lateral Femoral Cutaneous Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>神經根</small>L2-L3</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>由 L2、L3 發出，往外側走，行於腰大肌外側與髂肌外側緣。</li>
+              <li>到達髂前上棘附近，從 ASIS 內上方穿出，經縫匠肌下方與闊筋膜張肌區域。</li>
+              <li>最後進入大腿外側皮層，為純感覺神經，支配大腿外側皮膚。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>主要拉長髖關節前外側，不需特別處理膝關節，因神經未跨過膝。</li>
+              <li>髖關節帶向 <span class="cue">伸直</span> 加 <span class="cue">內收</span>，可同時伸展 TFL 與外側軟組織。</li>
+              <li>膝蓋保持放鬆或微屈即可，避免膝屈曲過多造成股外側肌緊繃而限制下壓幅度。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>神經較短，滑動幅度相對小，重點在髖關節前外側的交替張力。</li>
+              <li>拉長端：髖 <span class="cue">伸直 + 內收</span>。</li>
+              <li>放鬆端：髖 <span class="cue">屈曲 + 外展</span>。</li>
+              <li>在屈曲/伸直與內收/外展之間做流暢循環。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>觸摸定位</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>ASIS 與縫匠肌內側，接近神經鑽入位置。</span></div>
+              <div class="landmark"><span class="num">2</span><span>縫匠肌與 TFL 之間的縫隙。</span></div>
+              <div class="landmark"><span class="num">3</span><span>大腿外側皮膚感覺區，可作症狀比對。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>鑑別提醒</h4>
+            末端緊繃時加入低頭、抬頭做結構分化。若症狀與張力不變，較偏向 TFL 或外側肌群緊繃；若症狀被改變，才更支持神經張力參與。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <article class="nerve" id="femoral">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>股神經 <span class="latin">Femoral Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>神經根</small>L2-L4</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>由 L2、L3、L4 發出，沿髂腰肌外側緣下行。</li>
+              <li>走在腰大肌與髂肌之間，經鼠蹊韌帶中段附近進入股三角。</li>
+              <li>在股三角內位於股動脈外側，往下主要支配股四頭肌。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>因走在髖前側且支配股四頭肌，牽張需結合髖後伸與膝屈曲。</li>
+              <li>患者可仰臥或側臥，先將髖關節帶向 <span class="cue">伸直</span>。</li>
+              <li>再將膝關節帶向 <span class="cue">屈曲</span>，把股四頭肌與股神經遠端一起拉長。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>原則為近端與遠端交替，一端拉長時另一端放鬆。</li>
+              <li>拉長相：髖 <span class="cue">伸直</span>，膝 <span class="cue">伸直</span> 以放掉遠端肌肉張力。</li>
+              <li>放鬆相：髖 <span class="cue">屈曲</span>，膝 <span class="cue">屈曲</span>。</li>
+              <li>徒手可在神經位置輕壓，配合膝屈伸做滑動。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>觸摸定位</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>髂腰肌表層與鼠蹊韌帶中段附近。</span></div>
+              <div class="landmark"><span class="num">2</span><span>四字型擺位找股三角。</span></div>
+              <div class="landmark"><span class="num">3</span><span>股動脈外側可作股神經定位參考。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>鑑別提醒</h4>
+            到末端緊繃時，讓患者低頭看肚子再抬頭。若張力或症狀隨頸部動作改變，代表神經張力較可能參與；若不變，較可能是股四頭肌或髂腰肌緊繃。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <article class="nerve" id="obturator">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>閉孔神經 <span class="latin">Obturator Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>神經根</small>L2-L4</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>由腰神經叢 L2、L3、L4 前分支發出。</li>
+              <li>自腰大肌後方出來後往內側走，繞過恥骨上支後方，進入閉孔。</li>
+              <li>從恥骨下支內側穿出至大腿內側，支配內收肌群與股薄肌。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>神經位於髖關節前內側，需讓髖前內側被拉長。</li>
+              <li>擺位以髖關節 <span class="cue">後伸 + 外展</span> 為主。</li>
+              <li>膝關節不特別限制，可仰臥或側臥操作，直接將下肢外展並帶往後伸。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>動作軌跡與 TFL 類似但方向相反，活動範圍以外展位到正中央為主。</li>
+              <li>近端拉長：髖 <span class="cue">後伸</span>，膝踝放鬆。</li>
+              <li>近端放鬆：髖 <span class="cue">屈曲</span>，從後伸位回到正中或輕微屈曲。</li>
+              <li>避免跨過中線進入過多內收，以免干擾目標神經張力。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>觸摸定位</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>深層路徑位於骨盆內，臨床上不易直接觸診。</span></div>
+              <div class="landmark"><span class="num">2</span><span>可嘗試在股薄肌與內收長肌間隙尋找。</span></div>
+              <div class="landmark"><span class="num">3</span><span>以大腿內側內收肌群症狀作功能性參考。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>操作提醒</h4>
+            閉孔神經不容易像股神經或腓總神經那樣直接摸到，評估時更依賴路徑推理、擺位誘發與結構分化。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <article class="nerve" id="tibial">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>脛神經 <span class="latin">Tibial Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>神經根</small>L4-S3</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>坐骨神經由 L4-S3 組成，約在大腿下 1/3 分為脛神經與腓總神經。</li>
+              <li>脛神經偏正中或內側往下，穿入腓腸肌與比目魚肌深層前方。</li>
+              <li>沿小腿後側中央下行，逐漸偏內，經內踝與阿基里斯腱之間進入足底。</li>
+              <li>足底分成足底內側神經與足底外側神經。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>神經通過髖後、膝後、踝後與足底內側，需全線拉緊。</li>
+              <li>基礎為直腿抬高：髖 <span class="cue">屈曲</span>、膝 <span class="cue">伸直</span>。</li>
+              <li>踝關節加上 <span class="cue">背屈 + 外翻</span>，更精準鎖定脛神經。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>主要用髖關節近端與踝關節遠端互相交替。</li>
+              <li>近端拉長 / 遠端放鬆：髖 <span class="cue">屈曲</span>，踝放鬆至蹠屈或內翻方向。</li>
+              <li>遠端拉長 / 近端放鬆：踝 <span class="cue">背屈 + 外翻</span>，髖回彈減少屈曲角度。</li>
+              <li>臨床常先短暫牽張測試順應性，再進入規律 sliding。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>定位與操作</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>小腿後側中央，位於腓腸肌與比目魚肌深層。</span></div>
+              <div class="landmark"><span class="num">2</span><span>內踝與阿基里斯腱之間是重要路徑點。</span></div>
+              <div class="landmark"><span class="num">3</span><span>足底內外側分支可作症狀區域參考。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>操作提醒</h4>
+            治療師可用身體固定患者膝伸直，雙手控制髖與踝。過程中要能看見患者表情，依耐受度調整力道。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <article class="nerve" id="sural">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>腓腸神經 <span class="latin">Sural Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>來源</small>脛神經 + 腓總神經交通支</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>由脛神經在腘窩分出的淺層皮支，加上腓總神經交通支會合而成。</li>
+              <li>在腓腸肌中間會合後，順小腿外側下行。</li>
+              <li>經外踝與阿基里斯腱之間凹陷，再繞過外踝下方。</li>
+              <li>支配足外側緣、小趾外側與腳掌外側皮膚感覺。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>因走過膝後與外踝後方，基礎擺位為下肢後側神經張力。</li>
+              <li>髖 <span class="cue">屈曲</span>、膝 <span class="cue">伸直</span>。</li>
+              <li>踝關節關鍵擺位為 <span class="cue">背屈 + 內翻</span>。</li>
+              <li>末端踝關節固定後，動作要小而精準，避免猛拉。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>側臥位：帶入髖屈、膝伸至微張力，再加踝背屈內翻。</li>
+              <li>用髖關節微幅放鬆與反覆屈曲，帶動腓腸神經來回滑動。</li>
+              <li>站立位：身體微前傾維持髖屈膝伸，患側踝背屈內翻，配合重心上下與髖部動態。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>定位與症狀區</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>腓腸肌中間會合處。</span></div>
+              <div class="landmark"><span class="num">2</span><span>外踝與阿基里斯腱之間凹陷。</span></div>
+              <div class="landmark"><span class="num">3</span><span>足外側緣、小趾外側與腳掌外側。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>操作提醒</h4>
+            腓腸神經是偏感覺性的外側路徑，踝背屈內翻是和脛神經、腓神經分支鑑別時很重要的方向。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <article class="nerve" id="common-peroneal">
+      <header class="nerve-header">
+        <div class="nerve-title">
+          <h3>腓總神經 <span class="latin">Common Peroneal / Common Fibular Nerve</span></h3>
+        </div>
+        <div class="root-badge"><small>神經根</small>L4-S2</div>
+      </header>
+      <div class="nerve-body">
+        <div class="info-grid">
+          <section class="info-card route">
+            <h4><span class="dot"></span>神經走向</h4>
+            <ul>
+              <li>由坐骨神經於大腿下 1/3 分出，偏外側走向膝後外側。</li>
+              <li>繞過腓骨頭後方往下，於腓骨長肌附近分為深腓神經與淺腓神經。</li>
+              <li>深腓神經走在脛前肌與伸拇長肌之間深處，支配脛前肌、伸拇長肌、伸趾長肌。</li>
+              <li>淺腓神經沿腓骨肌群下行，通過外踝前方，支配足背大部分皮膚感覺。</li>
+            </ul>
+          </section>
+          <section class="info-card stretch">
+            <h4><span class="dot"></span>拉伸 / 牽張技術</h4>
+            <ul>
+              <li>起始可採側臥，髖與膝維持屈曲，讓治療師易於控制踝足擺位。</li>
+              <li>針對淺腓神經：踝足做 <span class="cue">蹠屈 + 內翻</span>，拉長外踝前方與足背路徑。</li>
+              <li>若要更接近深腓神經，注意第一、二趾間足背感覺區與脛前肌、伸拇長肌間隙。</li>
+            </ul>
+          </section>
+          <section class="info-card slide">
+            <h4><span class="dot"></span>滑動技術</h4>
+            <ul>
+              <li>避免持續死拉，採用踝足動態緊鬆交替。</li>
+              <li>從 <span class="cue">蹠屈 + 內翻</span> 的張力位，慢慢回到放鬆位置。</li>
+              <li>再由放鬆位重新進入蹠屈內翻，反覆讓神經在神經床中滑動。</li>
+              <li>目的在於促進循環、降低沾黏感與過度敏感。</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="side">
+          <section class="mini-route">
+            <h4>分支定位</h4>
+            <div class="landmarks">
+              <div class="landmark"><span class="num">1</span><span>腓骨頭後方是腓總神經的重要淺層路徑。</span></div>
+              <div class="landmark"><span class="num">2</span><span>深腓神經：脛前肌與伸拇長肌肌腱之間深處。</span></div>
+              <div class="landmark"><span class="num">3</span><span>淺腓神經：外踝前方與足背皮膚感覺區。</span></div>
+            </div>
+          </section>
+          <section class="keynote">
+            <h4>感覺區速記</h4>
+            深腓神經偏第一、二趾間；淺腓神經偏外踝到內踝之間的足背大範圍皮膚。
+          </section>
+        </aside>
+      </div>
+    </article>
+
+    <section class="table-section" id="summary">
+      <div class="section-title">
+        <h2>統整表</h2>
+        <p>把每條神經最關鍵的路徑、牽張擺位與滑動策略壓縮成一張表，適合課前複習或臨床前快速確認。</p>
+      </div>
+
+      <div class="table-shell">
+        <table>
+          <caption>下肢神經走向、拉伸與滑動技術總表</caption>
+          <thead>
+            <tr>
+              <th>神經</th>
+              <th>主要神經根 / 來源</th>
+              <th>關鍵走向</th>
+              <th>拉伸 / 牽張擺位</th>
+              <th>滑動技術重點</th>
+              <th>定位或支配區</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>股外側皮神經</strong><br><span class="tag">LFCN</span></td>
+              <td>L2-L3</td>
+              <td>腰大肌外側、髂肌外側緣，經 ASIS 內上方，至縫匠肌與 TFL 附近，進入大腿外側皮層。</td>
+              <td>髖伸直 + 內收；膝維持放鬆或微屈。</td>
+              <td>髖伸直內收拉長；髖屈曲外展放鬆，做小幅循環。</td>
+              <td>ASIS 與縫匠肌內側、縫匠肌與 TFL 間隙；大腿外側皮膚感覺。</td>
+            </tr>
+            <tr>
+              <td><strong>股神經</strong><br><span class="tag">Femoral</span></td>
+              <td>L2-L4</td>
+              <td>腰大肌與髂肌間下行，經鼠蹊韌帶中段進股三角，位於股動脈外側。</td>
+              <td>髖伸直 + 膝屈曲，拉長髖前側與股四頭肌路徑。</td>
+              <td>髖伸直膝伸直為拉長相；髖屈曲膝屈曲為放鬆相。</td>
+              <td>股三角、股動脈外側；主要支配股四頭肌。</td>
+            </tr>
+            <tr>
+              <td><strong>閉孔神經</strong><br><span class="tag">Obturator</span></td>
+              <td>L2-L4 前分支</td>
+              <td>腰大肌後方出來往內側，經恥骨上支後方與閉孔，至大腿內側。</td>
+              <td>髖後伸 + 外展；膝不特別限制。</td>
+              <td>外展位到正中央之間滑動；髖後伸拉長，髖屈曲回正放鬆。</td>
+              <td>股薄肌與內收長肌間隙可嘗試定位；支配內收肌群與股薄肌。</td>
+            </tr>
+            <tr>
+              <td><strong>脛神經</strong><br><span class="tag">Tibial</span></td>
+              <td>L4-S3</td>
+              <td>坐骨神經分支後偏中央下行，經小腿後側深層，通過內踝與阿基里斯腱間進足底。</td>
+              <td>髖屈曲 + 膝伸直 + 踝背屈外翻。</td>
+              <td>髖屈曲時踝放鬆；踝背屈外翻時髖放鬆回彈。</td>
+              <td>小腿後側、內踝後方；足底內側與外側分支。</td>
+            </tr>
+            <tr>
+              <td><strong>腓腸神經</strong><br><span class="tag">Sural</span></td>
+              <td>脛神經皮支 + 腓總神經交通支</td>
+              <td>腓腸肌中間會合，沿小腿外側下行，經外踝與阿基里斯腱間，再繞外踝下方。</td>
+              <td>髖屈曲 + 膝伸直 + 踝背屈內翻。</td>
+              <td>固定踝背屈內翻後，以髖微幅放鬆與反覆屈曲帶動滑動；也可站立前傾配合重心上下。</td>
+              <td>足外側緣、小趾外側、腳掌外側皮膚感覺。</td>
+            </tr>
+            <tr>
+              <td><strong>腓總神經</strong><br><span class="tag">Common fibular</span></td>
+              <td>L4-S2</td>
+              <td>坐骨神經外側分支，經膝後外側繞腓骨頭，於腓骨長肌附近分成深腓與淺腓神經。</td>
+              <td>側臥，髖膝屈曲；針對淺腓神經以踝蹠屈內翻拉長。</td>
+              <td>踝足從蹠屈內翻張力位回放鬆，再重新進入張力位，做緊鬆交替。</td>
+              <td>腓骨頭後方；深腓感覺在第一、二趾間，淺腓感覺在足背大部分區域。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      整理依據：使用者提供之課程文字資料。術語以繁體中文呈現，英文名稱保留於標題與總表，方便後續上 GitHub 時搜尋與維護。
+    </p>
+  </main>
+</body>
+</html>
